@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
+.App{
+  display: flex;
+  text-align: center;
+  background-color: #06067d;
+}
+a{
+  text-decoration: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #474bff;
+  padding-block: 10px;
+}
+nav img{
+  width: 100px;
+}
+nav ul{
+  position: relative;
+}
+.navLink{
+  font-size: 25px;
+  color: aquamarine;
+  margin: 0 10px;
+}
+nav ul p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -2px;
+  right: 12px;
+  background-color:darkorange;
+  width: 12px;
+  font-size: 10px;
+aspect-ratio: 1/1;
+  border-radius: 50%;
+  animation: gelatine 1s infinite;
+}
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 9px solid #474bff;
+  animation: spinner-bulqg1 0.8s infinite linear alternate,
+       spinner-oaa3wk 1.6s infinite linear;
+}
 
+@keyframes spinner-bulqg1 {
+  0% {
+     clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  }
+
+  12.5% {
+     clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  }
+
+  25% {
+     clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+  }
+
+  50% {
+     clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  62.5% {
+     clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  75% {
+     clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  100% {
+     clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
+  }
+}
+
+@keyframes spinner-oaa3wk {
+  0% {
+     transform: scaleY(1) rotate(0deg);
+  }
+
+  49.99% {
+     transform: scaleY(1) rotate(135deg);
+  }
+
+  50% {
+     transform: scaleY(-1) rotate(0deg);
+  }
+
+  100% {
+     transform: scaleY(-1) rotate(-135deg);
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.alignCenter{
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+.center{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+align-items: center;
+  margin: 50px auto;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.card{
+  max-width: 280px;
+  text-align: center;
+  padding: 20px 40px;
+  display: flex;
+flex-direction: column;  
+align-items: center;
+gap: 10px;
+transition: 1s all ease;
+border-radius: 20px;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+min-height: 300px;
+}
+.card p{
+  color: rgba(0, 0, 0, 0.637);
+  font-size: 12px;
+}
+.card img{
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+.card:hover{
+  box-shadow: rgba(0, 0, 0, 0.014) 0px 1px 4px, rgba(51, 51, 51, 0.83) 0px 0px 0px 3px;
 }
 
-.App-link {
-  color: #61dafb;
+
+button{
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  background-color:darkorange;
+  color: aliceblue;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+em{
+  letter-spacing: 2px;
+}
+.fade{
+  color: rgba(0, 0, 0, 0.764);
+}
+.wrap{
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+gap: 40px;
+}
+.wrap p{
+  color: #474bff;
+}
+.cart{
+  display: flex;
+  gap: 100px;
+justify-content: center;
+}
+.cartItem{
+  max-width: 600px;
+  margin-block: 100px;
+  display: flex;
+  gap: 20px;
+}
+.priceSec{
+  display: flex;
+  justify-content: space-between;
+}
+.cartSummary{
+  margin-block: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.colGap{
+  padding-block: 5px;
+}
+img{
+  max-width: 180px;
 }
